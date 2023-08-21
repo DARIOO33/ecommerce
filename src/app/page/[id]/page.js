@@ -1,7 +1,7 @@
 import Sellcard from "../../components/Sellcard/Sellcard"
 // import Pagenavigation from "../../components/Pagenavigation/Pagenavigation"
 async function getProducts() {
-    let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 3600 } })
+    let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 60 } })
     return res.json()
 }
 export default async function page(params) {
