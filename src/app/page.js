@@ -14,7 +14,7 @@ export default async function Home() {
 
 
       {currentPosts.map((product => (
-        <h1 key={product.id}>{product.name}</h1>
+        <Sellcard key={product.id} productName={product.name} description={product.description} price={product.price} />
       )))}
 
     </div>
