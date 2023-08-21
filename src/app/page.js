@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Sellcard from './components/Sellcard/Sellcard.jsx'
 import "./globals.css"
 async function getProducts() {
-  let res = await fetch("https://dario4dev.netlify.app/api/products")
+  let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 3600 } })
   return res.json()
 }
 export default async function Home() {
