@@ -1,0 +1,34 @@
+.dashboard {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    border: 0.05rem solid rgb(33, 33, 33);
+    left: 25%;
+    z-index: 88;
+    /* border: 1px solid red; */
+
+    /* background-color: red; */
+}
+
+.dash {
+    /* border: 1px solid red; */
+    position: absolute;
+    height: 30rem;
+    z-index: 2;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btnn {
+    background-color: #0085FF;
+}
+
+.btnn:hover {
+    background-color: #0072dd;
+
+
+}
