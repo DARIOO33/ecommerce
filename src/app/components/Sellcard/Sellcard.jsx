@@ -7,7 +7,7 @@ import Image from 'next/image'
 import './Sellcard.css'
 export default function SellCard({ price, productName, description, ratings }) {
 
-    const [value, setValue] = useState(ratings);
+    const [value, setValue] = useState(Math.floor(Math.random() * 5));
     const ratingChanged = (newRating) => {
         // console.log(newRating)
     }

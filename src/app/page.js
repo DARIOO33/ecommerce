@@ -15,7 +15,7 @@ export default async function Home() {
 
       {currentPosts.map((product => (
 
-        <Sellcard key={product.id} ratings={Math.floor(Math.random() * 5)} productName={product.name} description={product.description} price={product.price} />
+        <Sellcard key={product.id} productName={product.name} description={product.description} price={product.price} />
       )))}
 
     </div>
