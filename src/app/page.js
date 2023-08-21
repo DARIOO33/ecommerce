@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
+import Sellcard from './components/Sellcard/Sellcard.jsx'
 import "./globals.css"
 async function getProducts() {
   let res = await fetch("https://dario4dev.netlify.app/api/products")
