@@ -9,12 +9,13 @@ async function getProducts() {
 export default async function Home() {
   let products = await getProducts()
   const currentPosts = products.slice(0, 4)
+  let rate = Math.floor(Math.random() * 5)
   return (
     <div>
 
 
       {currentPosts.map((product => (
-        <Sellcard key={product.id} productName={product.name} description={product.description} price={product.price} />
+        <Sellcard key={product.id} ratings={rate} productName={product.name} description={product.description} price={product.price} />
       )))}
 
     </div>
