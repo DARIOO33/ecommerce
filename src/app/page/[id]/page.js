@@ -1,4 +1,4 @@
-import SellCard from "../../components/SellCard/SellCard"
+import Sellcard from "../../components/Sellcard/Sellcard"
 // import Pagenavigation from "../../components/Pagenavigation/Pagenavigation"
 async function getProducts() {
     let res = await fetch("https://dario4dev.netlify.app/api/products")
@@ -15,7 +15,7 @@ export default async function page(params) {
 
 
             {currentPosts.map((product => (
-                <SellCard key={product.id} price={product.price} productName={product.name} description={product.description} ratings={Math.floor(Math.random() * 5)} />
+                <Sellcard key={product.id} price={product.price} productName={product.name} description={product.description} ratings={Math.floor(Math.random() * 5)} />
             )))}
             {/* <Pagenavigation one={Number(currentpage) - 1} two={currentpage} three={Number(currentpage) + 1} /> */}
 
