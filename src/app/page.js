@@ -1,15 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-// import SellCard from "./components/SellCard/SellCard"
-// import Pagenavigation from "./components/Pagenavigation/Pagenavigation"
+
 import "./globals.css"
 async function getProducts() {
-  let res = await fetch("https://dario4dev.netlify.app/api/categories/products")
+  let res = await fetch("https://dario4dev.netlify.app/api/products")
   return res.json()
 }
 export default async function Home() {
   let products = await getProducts()
-  // console.log(typeof (products));
   const currentPosts = products.slice(0, 4)
   return (
     <div>
@@ -17,9 +15,8 @@ export default async function Home() {
 
       {currentPosts.map((product => (
         <h1 key={product.id}>{product.name}</h1>
-        // <SellCard key={product.id} price={product.price} productName={product.name} description={product.description} ratings={Math.floor(Math.random() * 5)} />
       )))}
-      {/* <Pagenavigation one="0" two="1" three="2" /> */}
+
     </div>
   )
 }
