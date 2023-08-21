@@ -11,6 +11,7 @@ export default function SellCard({ price, productName, description, ratings }) {
     const ratingChanged = (newRating) => {
         // console.log(newRating)
     }
+
     return (
         <>
             <div className="sellCard w-4/5 h-48 mt-8 rounded-xl m-auto flex items-center ">
