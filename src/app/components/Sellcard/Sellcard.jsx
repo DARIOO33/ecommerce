@@ -4,7 +4,7 @@ import img from '../../../assets/img.png'
 import { useState } from 'react';
 import { React } from 'react'
 import Image from 'next/image'
-import './SellCard.css'
+import './Sellcard.css'
 export default function SellCard({ price, productName, description, ratings }) {
 
     const [value, setValue] = useState(ratings);
