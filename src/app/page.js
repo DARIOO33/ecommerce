@@ -4,7 +4,7 @@ import Link from 'next/link'
 // import Pagenavigation from "./components/Pagenavigation/Pagenavigation"
 import "./globals.css"
 async function getProducts() {
-  let res = await fetch("http://guileless-shortbread-01fe64.netlify.app/api/products")
+  let res = await fetch("https://dario4dev.netlify.app/api/categories/products")
   return res.json()
 }
 export default async function Home() {
