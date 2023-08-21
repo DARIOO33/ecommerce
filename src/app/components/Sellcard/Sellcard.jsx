@@ -1,5 +1,5 @@
 "use client"
-// import Rating from '@mui/material/Rating';
+import Rating from '@mui/material/Rating';
 import img from '../../../assets/img.png'
 import { useState } from 'react';
 import { React } from 'react'
@@ -21,13 +21,13 @@ export default function SellCard({ price, productName, description, ratings }) {
                     <h1 className="text-xl font-bol cursor-pointer">{productName}</h1>
                     <p className="font-medium p-des">{description}</p>
                     <div className="stars pt-2">
-                        {/* <Rating
+                        <Rating
                             name="simple-controlled"
                             value={value}
                             onChange={(event, newValue) => {
                                 setValue(newValue);
                             }}
-                        /> */}
+                        />
                     </div>
                 </div>
                 <div className="buy w-2/12  m-auto text-center">
