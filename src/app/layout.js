@@ -2,6 +2,7 @@ import './globals.css'
 // import { Inter } from 'next/font/google'
 import Header from './components/Header/Header.jsx'
 import Dash from './components/dash/Dash.jsx'
+import Navigation from './components/navigation/Navigation.jsx'
 // const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Create Next App',
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
           <Dash />
           <div className='content w-2/3  mt-24 pb-8'>
             {children}
+            <Navigation />
           </div>
         </div>
       </body>

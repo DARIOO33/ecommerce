@@ -1,0 +1,22 @@
+.itemm {
+    font-size: 1.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .25rem;
+    transition: .1s;
+    background-color: #D9D9D9;
+}
+
+.itemm:hover {
+    background-color: #a3a3a3;
+
+}
+
+.itemm:first-child,
+.itemm:last-child {
+    font-size: 1.3rem;
+}
