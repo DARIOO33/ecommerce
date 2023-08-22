@@ -50,22 +50,22 @@ export default function Navigation(params) {
     const next = ">>"
     return (
         <div className="m-auto justify-between  text-center mt-12 flex items-center w-64 h-12 ">
-            <div className="itemm px-2 prev" >
-                <Link href={prevlink}>
+            <Link href={prevlink}>
+                <div className="itemm px-2 prev" >
                     {prev}
-                </Link>
-            </div>
+                </div>
+            </Link>
             <div className="itemm px-2">
                 1
             </div>
             <div className="itemm px-2">2</div>
             <div className="itemm px-2">3</div>
-            <div className="itemm px-2 next">
-                <Link href={nextlink}>
+            <Link href={nextlink}>
+                <div className="itemm px-2 next">
 
                     {next}
-                </Link>
-            </div>
+                </div>
+            </Link>
         </div>
     )
 };
