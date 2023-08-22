@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 
 export default function Item({ text }) {
     const pathname = usePathname()
-    console.log(pathname);
+    // console.log(pathname);
     let ch;
     if (pathname.includes('category')) {
         ch = text.toLowerCase()
@@ -13,7 +13,7 @@ export default function Item({ text }) {
         ch = "category/" + text.toLowerCase()
 
     }
-    console.log(ch);
+    // console.log(ch);
 
     const link = ch
     return (
