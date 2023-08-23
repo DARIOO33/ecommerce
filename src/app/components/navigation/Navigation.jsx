@@ -19,6 +19,7 @@ export default function Navigation(params) {
         }
         return prev.toString()
     }
+
     function nextpage() {
         console.log(pathname);
         if (pathname.length == 1) {
@@ -43,13 +44,23 @@ export default function Navigation(params) {
     const prev = "<<"
     const next = ">>"
     let first, second, third, activef, actives;
-    if (pageIndex == 1) {
+    console.log(pageIndex);
+    if (pageIndex == 1 || pageIndex == "") {
         first = pageIndex
+
         second = Number(pageIndex) + 1
         third = Number(pageIndex) + 2
         activef = true
         actives = false
+        if (pageIndex == "") {
+            activef = true
+            actives = false
+            first = 1
+            second = 2
+            third = 3
+        }
     }
+
     else {
         first = Number(pageIndex) - 1
         second = Number(pageIndex)
@@ -65,6 +76,15 @@ export default function Navigation(params) {
         isActive = ""
         isActivef = "active "
     }
+    function current() {
+        if (pathname.includes('page')) {
+            return second.toString()
+        }
+        else {
+            return 'page/' + second.toString()
+        }
+    }
+    const curr = current()
     return (
         <div className="m-auto justify-between  text-center mt-12 flex items-center w-64 h-12 ">
             <Link href={prevlink}>
@@ -72,17 +92,19 @@ export default function Navigation(params) {
                     {prev}
                 </div>
             </Link>
-            <div className={isActive + ("itemm px-2 current")}>
-                <Link href={prevlink}>
+            <Link href={prevlink}>
+                <div className={isActive + ("itemm px-2 current")}>
                     {first}
-                </Link>
-            </div>
-            <div className={isActivef + "itemm px-2 next"}>{second}</div>
-            <div className="itemm px-2">
-                <Link href={nextlink}>
+                </div>
+            </Link>
+            <Link href={curr}>
+                <div className={isActivef + "itemm px-2 next"}>{second}</div>
+            </Link>
+            <Link href={nextlink}>
+                <div className="itemm px-2">
                     {third}
-                </Link>
-            </div>
+                </div>
+            </Link>
             <Link href={nextlink}>
                 <div className="itemm px-2 next">
 
