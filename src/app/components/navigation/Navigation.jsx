@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import './n.css'
+import { document } from 'postcss'
 export default function Navigation(params) {
     const pathname = usePathname()
     const path = pathname.slice(1);
@@ -36,20 +37,33 @@ export default function Navigation(params) {
         prevv = pageKeyword + prevpage()
         nextt = pageKeyword + nextpage()
     }
+
     const nextlink = nextt
     const prevlink = prevv
     const prev = "<<"
     const next = ">>"
-    let first, second, third;
+    let first, second, third, activef, actives;
     if (pageIndex == 1) {
         first = pageIndex
         second = Number(pageIndex) + 1
         third = Number(pageIndex) + 2
+        activef = true
+        actives = false
     }
     else {
         first = Number(pageIndex) - 1
         second = Number(pageIndex)
         third = Number(pageIndex) + 1
+        actives = true
+    }
+    let isActive, isActivef;
+    if (activef) {
+        isActive = 'active '
+        isActivef = " "
+    }
+    else {
+        isActive = ""
+        isActivef = "active "
     }
     return (
         <div className="m-auto justify-between  text-center mt-12 flex items-center w-64 h-12 ">
@@ -58,12 +72,12 @@ export default function Navigation(params) {
                     {prev}
                 </div>
             </Link>
-            <div className="itemm px-2">
+            <div className={isActive + ("itemm px-2 current")}>
                 <Link href={prevlink}>
                     {first}
                 </Link>
             </div>
-            <div className="itemm px-2">{second}</div>
+            <div className={isActivef + "itemm px-2 next"}>{second}</div>
             <div className="itemm px-2">
                 <Link href={nextlink}>
                     {third}
