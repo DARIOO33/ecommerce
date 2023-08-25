@@ -1,5 +1,5 @@
 import Sellcard from "../../components/Sellcard/Sellcard"
-import Navigation from "../../components/Navigation/Navigation"
+import Navigation from "../../components/navigation/Navigation"
 import Dash from '../../components/dash/Dash'
 async function getProducts() {
     let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 60 } })
