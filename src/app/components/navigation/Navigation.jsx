@@ -29,15 +29,10 @@ export default function Navigation(params) {
         return prev.toString()
     }
     let prevv, nextt;
-    const pageKeyword = "page/";
-    if (pathname.includes("page")) {
-        prevv = prevpage()
-        nextt = nextpage()
-    }
-    else {
-        prevv = pageKeyword + prevpage()
-        nextt = pageKeyword + nextpage()
-    }
+    const pageKeyword = "/page/";
+    prevv = pageKeyword + prevpage()
+    nextt = pageKeyword + nextpage()
+
 
     const nextlink = nextt
     const prevlink = prevv
@@ -76,15 +71,7 @@ export default function Navigation(params) {
         isActive = ""
         isActivef = "active "
     }
-    function current() {
-        if (pathname.includes('page')) {
-            return second.toString()
-        }
-        else {
-            return 'page/' + second.toString()
-        }
-    }
-    const curr = current()
+
     return (
         <div className="m-auto justify-between  text-center mt-12 flex items-center w-64 h-12 ">
             <Link href={prevlink}>
@@ -97,7 +84,7 @@ export default function Navigation(params) {
                     {first}
                 </div>
             </Link>
-            <Link href={curr}>
+            <Link href={'/page/' + second.toString()}>
                 <div className={isActivef + "itemm px-2 next"}>{second}</div>
             </Link>
             <Link href={nextlink}>
