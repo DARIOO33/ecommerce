@@ -52,3 +52,4 @@ export default function SellCard({ id, price, productName, description, ratings 
         </>
     )
 };
+

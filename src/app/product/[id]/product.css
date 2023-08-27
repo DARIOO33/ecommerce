@@ -1,5 +1,6 @@
 .product-container {
     border: 1px solid rgb(0, 0, 0, 0.2);
+    height: 30rem;
 }
 
 .product {
@@ -10,10 +11,18 @@
     /* border: 1px solid rgb(0, 0, 0, 0.2); */
 }
 
+.primarybg {
+    background-color: #0085FF;
+}
+
 .shape {
     height: 3rem;
     width: 4.5rem;
     background-color: gray;
+}
+
+.fbold {
+    font-weight: 500;
 }
 
 .image-nav {
