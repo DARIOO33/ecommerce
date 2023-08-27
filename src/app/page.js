@@ -6,7 +6,7 @@ import Dash from './components/dash/Dash.jsx'
 import Sellcard from './components/Sellcard/Sellcard.jsx'
 import "./globals.css"
 async function getProducts() {
-  let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 3600 } })
+  let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 30 } })
   return res.json()
 }
 export default async function Home() {

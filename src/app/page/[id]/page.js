@@ -2,7 +2,7 @@ import Sellcard from "../../components/Sellcard/Sellcard"
 import Navigation from "../../components/navigation/Navigation"
 import Dash from '../../components/dash/Dash'
 async function getProducts() {
-    let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 60 } })
+    let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 10 } })
     return res.json()
 }
 export default async function page(params) {
