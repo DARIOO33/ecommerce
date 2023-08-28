@@ -10,7 +10,7 @@ export default async function page(params) {
     const currentpage = params.params.id
     let products = await getProducts()
     // console.log(typeof (products));
-    const currentPosts = products.slice((currentpage - 1) * 4, currentpage * 4)
+    const currentPosts = products.slice((currentpage - 1) * 3, currentpage * 3)
     return (
         <div>
 
@@ -19,7 +19,7 @@ export default async function page(params) {
 
 
                 {currentPosts.map((product => (
-                    <Sellcard id={product.id} key={product.id} price={product.price} productName={product.name} description={product.description} ratings={Math.floor(Math.random() * 5)} />
+                    <Sellcard img={product.images[0]} id={product.id} key={product.id} price={product.price} productName={product.name} description={product.description} ratings={Math.floor(Math.random() * 5)} />
                 )))}
                 <Navigation />
 
