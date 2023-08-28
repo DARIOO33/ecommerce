@@ -23,7 +23,7 @@ export default function SellCard({ id, price, productName, description, ratings 
                     </div>
                     <div className="details w-5/12 pl-6">
                         <h1 className="text-xl font-bol cursor-pointer">{productName}</h1>
-                        <p className="font-medium p-des">{description}</p>
+                        <p className="font-medium p-des">{(description.substr(0, 100))}...</p>
                         <div className="stars pt-2">
                             <Rating
                                 name="simple-controlled"

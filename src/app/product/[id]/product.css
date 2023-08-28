@@ -16,8 +16,8 @@
 }
 
 .shape {
-    height: 3rem;
-    width: 4.5rem;
+    height: 4rem;
+    width: 6rem;
     background-color: gray;
 }
 
@@ -59,14 +59,14 @@
 
 .product-big-image {
     height: 20rem;
-    padding: 2rem;
+    padding: 0rem;
     border: 1px solid gray;
 
 
 }
 
 .product-big-image img {
-
+    /* width: auto; */
     object-fit: contain;
-    height: 90%;
+    height: 100%;
 }
