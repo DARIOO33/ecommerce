@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navigation from './components/navigation/Navigation.jsx'
 import Dash from './components/dash/Dash.jsx'
+import img from '../assets/img.png'
 
 import Sellcard from './components/Sellcard/Sellcard.jsx'
 import "./globals.css"
@@ -11,7 +12,8 @@ async function getProducts() {
 }
 export default async function Home() {
   let products = await getProducts()
-  const currentPosts = products.slice(0, 4)
+  const currentPosts = products.slice(0, 3)
+
   return (
     <div>
       <Dash />
@@ -20,7 +22,7 @@ export default async function Home() {
 
         {currentPosts.map((product => (
 
-          <Sellcard id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
+          <Sellcard img={product.images[0]} id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
         )))}
 
         <Navigation />
