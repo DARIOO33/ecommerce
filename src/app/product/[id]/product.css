@@ -1,6 +1,6 @@
 .product-container {
     border: 1px solid rgb(0, 0, 0, 0.2);
-    height: 30rem;
+    height: auto;
 }
 
 .button button:hover {

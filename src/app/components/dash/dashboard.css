@@ -10,6 +10,16 @@
     /* background-color: red; */
 }
 
+
+
+@media screen and (max-width:1000px) {
+    .dashboard {
+        display: none;
+    }
+
+
+}
+
 .dash {
     /* border: 1px solid red; */
     position: absolute;

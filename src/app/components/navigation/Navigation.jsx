@@ -8,9 +8,11 @@ export default function Navigation(params) {
     const path = pathname.slice(1);
     const slash = path.indexOf('/')
     const pageIndex = path.substr(slash + 1, path.length - slash)
+    const categories = ["electronics", "sport", "decor", "fashion"]
+    console.log(pageIndex);
 
     function prevpage() {
-        if (pathname.length == 1) {
+        if (pathname.length == 1 || categories.includes(pageIndex)) {
             return 1
         }
         let prev = Number(pageIndex) - 1
