@@ -13,11 +13,17 @@ header {
 }
 
 .item1 {
-    flex: 2;
+    /* flex: 2; */
+    /* border: 1px solid red; */
+
 }
 
 .item2 {
-    flex: 2;
+    position: absolute;
+    right: 8rem;
+
+    /* border: 1px solid red; */
+    /* flex: 2; */
 }
 
 .icons svg {

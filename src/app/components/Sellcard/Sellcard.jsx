@@ -1,6 +1,6 @@
 "use client"
 import Rating from '@mui/material/Rating';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { React } from 'react'
 import Link from 'next/link';
 import img from '../../../assets/img.png'
@@ -16,6 +16,7 @@ export default function SellCard({ img, id, price, productName, description, rat
 
     return (
         <>
+
             <Link href={"/product/" + href}>
                 <div className="sellCard w-4/5 h-48 mt-8 rounded-xl m-auto flex items-center ">
                     <div className="product-image h-36 bg-gray-100 w-4/12 ml-6 rounded-lg">
@@ -49,6 +50,7 @@ export default function SellCard({ img, id, price, productName, description, rat
                     </div>
                 </div>
             </Link >
+
         </>
     )
 };

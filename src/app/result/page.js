@@ -30,9 +30,9 @@ export default async function page(params) {
 
                 {filtredPrice.map((product => (
 
-                    <Suspense key={product.id} fallback={<h1>Loading ! </h1>}>
-                        <Sellcard img={product.images[0]} id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
-                    </Suspense>
+
+                    <Sellcard img={product.images[0]} id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
+
                 )))}
 
             </div>
