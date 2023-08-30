@@ -6,6 +6,7 @@ import ImageNav from '../smallcomponents/ImageNav.jsx'
 import Image from 'next/image'
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import Rating from '@mui/material/Rating';
+import StepBack from '../smallcomponents/StepBack.jsx'
 import msi from '../../../assets/msi.png'
 import msi2 from '../../../assets/msi2.png'
 async function getProducts() {
@@ -23,9 +24,7 @@ export default async function page(params) {
     return (
         <>
             <div className='return ml-4 cursor-pointer absolute w-5/6 m-auto'>
-                <Link href="//">
-                    <AiOutlineArrowLeft className='text-3xl' />
-                </Link>
+                <StepBack />
             </div>
             <div className=' product-container m-auto w-5/6  rounded-lg mt-24  pb-8 flex items-center'>
                 <div className='product  flex  items-center'>
@@ -67,7 +66,7 @@ export default async function page(params) {
                                 {currentProduct.description}
                             </p>
                             <div className='button mt-3'>
-                                <button className='px-4 py-2 primarybg text-white rounded-2xl text-md'>Add To Cart</button>
+                                <button className='px-4 py-2 primarybg text-white rounded-2xl text-md'>Buy Now</button>
                             </div>
                             <Stock />
                             <Category category={currentProduct.category} />

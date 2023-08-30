@@ -44,7 +44,7 @@ export default function SellCard({ img, id, price, productName, description, rat
                         <div className="btn text-center mt-4 ">
 
                             <button className='text-white btnn px-4 py-1 btn-buy rounded-xl  '>
-                                Buy Now
+                                Add To Cart
                             </button>
                         </div>
                     </div>
