@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Dash from "../components/dash/Dash";
 import Sellcard from "../components/Sellcard/Sellcard";
 async function getProducts() {
@@ -26,9 +27,12 @@ export default async function page(params) {
 
             <div className='content  mt-24 pb-8'>
 
+
                 {filtredPrice.map((product => (
 
-                    <Sellcard img={product.images[0]} id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
+                    <Suspense key={product.id} fallback={<h1>Loading ! </h1>}>
+                        <Sellcard img={product.images[0]} id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
+                    </Suspense>
                 )))}
 
             </div>

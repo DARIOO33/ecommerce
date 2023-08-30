@@ -6,12 +6,15 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 export default function PriceParams() {
     const [min, setMin] = useState(0)
-
     const [max, setMax] = useState(0)
     const [category, setCategory] = useState("null")
     const categories = ['electronics', "sport", "decor", "fashion"]
     const paths = usePathname()
     const searchParams = useSearchParams().get("category")
+    const minParams = useSearchParams().get("min")
+    const maxParams = useSearchParams().get("max")
+
+
 
     useEffect(() => {
         if (paths.includes('category')) {
@@ -22,7 +25,8 @@ export default function PriceParams() {
             console.log(categorysearch);
         }
         try {
-
+            setMin(minParams)
+            setMax(maxParams)
             categories.forEach(category => {
                 let valid = (searchParams.includes(category))
                 if (valid) {
@@ -33,7 +37,11 @@ export default function PriceParams() {
         }
         catch {
             console.log("failed");
+            setMin(0)
+            setMax(0)
         }
+
+
     }, [paths]);
 
 
