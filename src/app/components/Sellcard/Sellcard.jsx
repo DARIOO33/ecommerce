@@ -15,43 +15,47 @@ export default function SellCard({ img, id, price, productName, description, rat
     const href = id.toString()
 
     return (
-        <>
+        <div>
 
-            <Link href={"/product/" + href}>
-                <div className="sellCard w-4/5 h-48 mt-8 rounded-xl m-auto flex items-center ">
-                    <div className="product-image h-36 bg-gray-100 w-4/12 ml-6 rounded-lg">
+            <div className="sellCard w-4/5 h-48 mt-8 rounded-xl m-auto flex items-center ">
+                <div className="product-image h-36 bg-gray-100 w-4/12 ml-6 rounded-lg">
+                    <Link href={"/product/" + href}>
+
                         <Image src={img} alt="" height={500} width={500} />
-                    </div>
-                    <div className="details w-5/12 pl-6">
+                    </Link>
+                </div>
+                <div className="details w-5/12 pl-6">
+                    <Link href={"/product/" + href}>
+
                         <h1 className="text-xl font-bol cursor-pointer">{productName}</h1>
-                        <p className="font-medium p-des">{(description.substr(0, 100))}...</p>
-                        <div className="stars pt-2">
-                            <Rating
-                                name="simple-controlled"
-                                value={value}
-                                onChange={(event, newValue) => {
-                                    setValue(newValue);
-                                }}
-                            />
-                        </div>
-                    </div>
-                    <div className="buy w-2/12  m-auto text-center">
-                        <div className="text-center ">
-
-                            <h1 className=' text-primary price-btn'>{price}$</h1>
-                            <p className=' text-sm font-medium text-primary'>+Free Shipping</p>
-                        </div>
-                        <div className="btn text-center mt-4 ">
-
-                            <button className='text-white btnn px-4 py-1 btn-buy rounded-xl  '>
-                                Add To Cart
-                            </button>
-                        </div>
+                    </Link>
+                    <p className="font-medium p-des">{(description.substr(0, 100))}...</p>
+                    <div className="stars pt-2">
+                        <Rating
+                            name="simple-controlled"
+                            value={value}
+                            onChange={(event, newValue) => {
+                                setValue(newValue);
+                            }}
+                        />
                     </div>
                 </div>
-            </Link >
+                <div className="buy w-2/12  m-auto text-center">
+                    <div className="text-center ">
 
-        </>
+                        <h1 className=' text-primary price-btn'>{price}$</h1>
+                        <p className=' text-sm font-medium text-primary'>+Free Shipping</p>
+                    </div>
+                    <div className="btn text-center mt-4 ">
+
+                        <button className='text-white btnn px-4 py-1 btn-buy rounded-xl  '>
+                            Add To Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     )
 };
 
