@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <div >
-            <header className="mobile:block  border-b laptop:fixed w-full laptop:items-center laptop:top-0 laptop:flex  py-4     bg-white">
+            <header className="mobile:block  border-b mobile:fixed laptop:fixed w-full laptop:items-center top-0 laptop:flex  py-4     bg-white">
                 <div className="item item1 ">
                     <h1 className=" mobile:text-center mobile:ml-0 title text-3xl laptop:ml-14 cursor-pointer ">
                         <Link href="/">

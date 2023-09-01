@@ -12,18 +12,13 @@
 
 
 
-@media screen and (max-width:1000px) {
-    .dashboard {
-        display: none;
-    }
 
-
-}
 
 .dash {
     /* border: 1px solid red; */
     position: absolute;
     height: 30rem;
+    background-color: transparent;
     z-index: 2;
 }
 
@@ -39,6 +34,49 @@ input::-webkit-inner-spin-button {
 
 .btnn:hover {
     background-color: #0072dd;
+
+
+}
+
+.filtre {
+    opacity: 0;
+}
+
+@media screen and (max-width:1000px) {
+    .filtre {
+        opacity: 1;
+        background-color: red;
+        font-size: 1rem;
+    }
+
+    .dash {
+        background-color: gray;
+        z-index: 101;
+        top: 0;
+        height: 100vh;
+        opacity: 0;
+        left: -100%;
+        padding-top: 4rem;
+        transition: .4s;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        width: 55vw;
+        position: fixed;
+    }
+
+    .dash.activedash {
+        transition: .4s;
+        left: 0%;
+        opacity: 1;
+    }
+
+    .dashboard {
+        position: relative;
+        width: 100%;
+        left: 0;
+        border: none;
+    }
 
 
 }

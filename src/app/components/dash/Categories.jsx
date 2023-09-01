@@ -1,11 +1,8 @@
 import Item from './Item.jsx'
-async function getCats() {
-    let res = await fetch("https://dario4dev.netlify.app/api/categories")
-    return res.json()
-}
-export default async function Categories() {
-    const categories = await getCats()
-    console.log(categories);
+
+export default function Categories() {
+    const categories = [{ "id_cat": "1", "name": "electronics" }, { "id_cat": "2", "name": "sport" }, { "id_cat": "3", "name": "decor" }, { "id_cat": "4", "name": "fashion" }]
+
     return (
         <>
             <h1 className="text-center text-2xl font-bold mt-12">Category</h1>
