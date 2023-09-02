@@ -11,6 +11,9 @@
 }
 
 
+.close {
+    display: none;
+}
 
 
 
@@ -47,6 +50,10 @@ input::-webkit-inner-spin-button {
         opacity: 1;
         background-color: rgba(100, 100, 100, .2);
         font-size: 1rem;
+    }
+
+    .close {
+        display: block;
     }
 
     .dash {
