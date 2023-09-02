@@ -48,7 +48,7 @@ export default function PriceParams() {
     const link = "/result?min=" + min + "&max=" + max + "&category=" + category
 
     let redirect;
-    if (min > max) {
+    if (Number(min) > Number(max)) {
         redirect = "/error"
     }
     else {
