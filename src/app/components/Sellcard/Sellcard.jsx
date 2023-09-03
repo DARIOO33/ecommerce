@@ -3,30 +3,26 @@ import Rating from '@mui/material/Rating';
 import { Suspense, useState } from 'react';
 import { React } from 'react'
 import Link from 'next/link';
-import img from '../../../assets/img.png'
 import Image from 'next/image'
 import './Sellcard.css'
 export default function SellCard({ img, id, price, productName, description, ratings }) {
-
-    const [value, setValue] = useState(Math.floor(Math.random() * 5));
-    const ratingChanged = (newRating) => {
-        // console.log(newRating)
+    const [orders, Setorders] = useState(0)
+    const addorder = () => {
+        Setorders((prev) => prev + 1);
     }
+    const [value, setValue] = useState(Math.floor(Math.random() * 5));
     const href = id.toString()
-
     return (
         <div>
 
             <div className="sellCard  w-4/5 h-48 mt-8 rounded-xl m-auto flex items-center ">
                 <div className="product-image h-36 bg-gray-100 w-4/12 ml-6 rounded-lg">
                     <Link href={"/product/" + href}>
-
                         <Image src={img} alt="" height={500} width={500} />
                     </Link>
                 </div>
                 <div className="details w-5/12 pl-6">
                     <Link href={"/product/" + href}>
-
                         <h1 className="text-xl font-bol cursor-pointer">{productName}</h1>
                     </Link>
                     <p className="font-medium p-des">{(description.substr(0, 100))}...</p>
@@ -48,9 +44,10 @@ export default function SellCard({ img, id, price, productName, description, rat
                     </div>
                     <div className="btn text-center mt-4 ">
 
-                        <button className='text-white btnn px-4 py-1 btn-buy rounded-xl  '>
+                        <button onClick={addorder} className='text-white btnn px-4 py-1 btn-buy rounded-xl  '>
                             Add To Cart
                         </button>
+                        <p>{orders}</p>
                     </div>
                 </div>
             </div>
@@ -58,4 +55,3 @@ export default function SellCard({ img, id, price, productName, description, rat
         </div>
     )
 };
-

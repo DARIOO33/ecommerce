@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BsBag } from 'react-icons/bs'
 export default function Header() {
-
     return (
         <div >
             <header className="mobile:block  border-b mobile:fixed laptop:fixed w-full laptop:items-center top-0 laptop:flex  py-4     bg-white">
