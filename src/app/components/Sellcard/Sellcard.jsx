@@ -1,17 +1,27 @@
 "use client"
 import Rating from '@mui/material/Rating';
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useContext } from 'react';
 import { React } from 'react'
 import Link from 'next/link';
 import Image from 'next/image'
 import './Sellcard.css'
+import CartContext from "@/context/CartContext"
 export default function SellCard({ img, id, price, productName, description, ratings }) {
-    const [orders, Setorders] = useState(0)
-    const addorder = () => {
-        Setorders((prev) => prev + 1);
-    }
+
     const [value, setValue] = useState(Math.floor(Math.random() * 5));
     const href = id.toString()
+    const { addItemToCart } = useContext(CartContext)
+    const addToCartHandler = () => {
+        addItemToCart({
+            product_id: id,
+            name: productName,
+            description: description,
+            price: price,
+
+            image: { img }
+        })
+    }
+
     return (
         <div>
 
@@ -44,10 +54,9 @@ export default function SellCard({ img, id, price, productName, description, rat
                     </div>
                     <div className="btn text-center mt-4 ">
 
-                        <button onClick={addorder} className='text-white btnn px-4 py-1 btn-buy rounded-xl  '>
+                        <button onClick={addToCartHandler} className='text-white btnn px-4 py-1 btn-buy rounded-xl  '>
                             Add To Cart
                         </button>
-                        <p>{orders}</p>
                     </div>
                 </div>
             </div>

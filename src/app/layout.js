@@ -1,8 +1,8 @@
 import './globals.css'
-// import { Inter } from 'next/font/google'
 import Header from './components/Header/Header.jsx'
 import Image from "next/image"
 import Dash from './components/dash/Dash.jsx'
+import { GlobalProvider } from './GlobalProvider'
 // const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'E-Commerce Projet By Dario ',
@@ -15,13 +15,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <div className="home relative top-4  -z-1">
-          {children}
-          {/* <Dash /> */}
+        <GlobalProvider>
 
-        </div>
+          <Header />
+
+          <div className="home relative top-4  -z-1">
+            {children}
+            {/* <Dash /> */}
+
+          </div>
+        </GlobalProvider>
       </body>
-    </html>
+    </html >
   )
 }

@@ -1,0 +1,75 @@
+"use client"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
+import { createContext, useState } from "react"
+
+
+const CartContext = createContext()
+
+export const CartProvider = ({ children }) => {
+    const [cart, setCart] = useState([])
+    const router = useRouter
+
+    useEffect(() => {
+        setCarTToState()
+    }, [])
+
+    const setCarTToState = () => {
+        setCart(
+            localStorage.getItem('cart')
+                ? JSON.parse(localStorage.getItem('cart'))
+                : []
+        )
+    }
+
+
+    const addItemToCart = async ({
+        product_id,
+        name,
+        description,
+        price,
+        image,
+        quantity = 1
+    }) => {
+
+        const item = {
+            product_id,
+            name,
+            description,
+            price,
+            image,
+            quantity,
+        }
+
+
+        const isItemExist = cart?.cartItems?.find(
+            (i) => i.product_id === item.product_id
+        )
+
+        let newCartItems;
+        newCartItems = [...(cart?.cartItems || []), item]
+
+        // if (isItemExist) {
+        //     newCartItems = cart?.cartItems?.map((i) =>
+        //         i.product_id === isItemExist.product_id ? item : i
+        //     )
+
+        // }
+        // else {
+        //     newCartItems = [...(cart?.cartItems || []), item]
+
+        // }
+        localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }))
+        setCarTToState()
+
+    }
+    return <CartContext.Provider
+        value={{
+            cart,
+            addItemToCart,
+        }}
+    >
+        {children}
+    </CartContext.Provider>
+}
+export default CartContext 
