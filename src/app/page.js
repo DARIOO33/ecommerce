@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <div>
       <Dash />
-      <div className=' z-10 content mobile:mt-16  laptop:mt-20 pb-8'>
+      <div className=' z-10 content   pb-8'>
 
 
         {currentPosts.map((product => (

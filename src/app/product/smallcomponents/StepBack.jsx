@@ -8,7 +8,7 @@ export default function StepBack(params) {
     const router = useRouter()
     return (
         <p className=' cursor-default'>
-            <AiOutlineArrowLeft onClick={() => router.back()} className='text-3xl cursor-pointer' />
+            <AiOutlineArrowLeft onClick={() => router.back()} className='text-3xl font-extrabold cursor-pointer' />
         </p>
     )
 };

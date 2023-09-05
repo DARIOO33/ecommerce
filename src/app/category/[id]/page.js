@@ -29,7 +29,7 @@ export default async function page(params) {
             <div>
                 <Dash />
 
-                <div className='content  mt-24 pb-8'>
+                <div className='content  pb-8'>
 
                     {filtredProduct.map((product => (
 

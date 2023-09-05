@@ -15,7 +15,7 @@ export default async function page(params) {
         <div>
 
             <Dash />
-            <div className='content w-2/3  mt-24 mobile:mt-16 pb-8'>
+            <div className='content w-2/3    pb-8'>
 
 
                 {currentPosts.map((product => (

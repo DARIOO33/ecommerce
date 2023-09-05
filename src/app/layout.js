@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
 
           <Header />
 
-          <div className="home relative top-4  -z-1">
+          <div className="home relative  -z-1">
             {children}
             {/* <Dash /> */}
 
