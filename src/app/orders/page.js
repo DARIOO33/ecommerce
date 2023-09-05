@@ -1,6 +1,9 @@
 import Image from "next/image"
 import "./orders.css"
 import Quantity from "../components/order/Quantity"
+import Price from "../components/order/Price"
+import Total from "../components/order/Total"
+import Handler from "../components/order/Handler"
 export default function page() {
     return (
         <div className="order-container  w-full   flex ">
@@ -28,18 +31,7 @@ export default function page() {
                             </div>
                         </div>
                     </div>
-                    <div className="quantity w-3/12 text-center">
-                        <h1 className="text-xm text-center text-gray-400 font-bold">Quantity</h1>
-                        <Quantity />
-                    </div>
-                    <div className="price w-2/12">
-                        <h1 className="text-xm text-center text-gray-400 font-bold">Price</h1>
-
-                    </div>
-                    <div className="total w-2/12">
-                        <h1 className="text-xm text-center text-gray-400 font-bold">Total</h1>
-
-                    </div>
+                    <Handler />
                 </div>
             </div>
             <div className="item-price w-4/12 bg-slate-100 pt-10 px-12" >

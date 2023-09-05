@@ -3,8 +3,7 @@
 import { useState } from "react"
 
 
-export default function Quantity() {
-    const [counter, setCounter] = useState(0)
+export default function Quantity({ counter, setCounter }) {
     function Increament() {
         setCounter(counter + 1)
     }
