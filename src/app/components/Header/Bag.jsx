@@ -5,10 +5,12 @@ import CartContext from '@/context/CartContext'
 import Link from 'next/link'
 export default function Bag() {
     const { addItemToCart, cart } = useContext(CartContext)
-
     let orders;
+
+
     try {
         orders = cart.cartItems.length
+        // console.log(cart.cartItems.length);
     }
     catch {
         orders = 0

@@ -11,10 +11,10 @@ export const CartProvider = ({ children }) => {
     const router = useRouter
 
     useEffect(() => {
-        setCarTToState()
+        setCartToState()
     }, [])
 
-    const setCarTToState = () => {
+    const setCartToState = () => {
         setCart(
             localStorage.getItem('cart')
                 ? JSON.parse(localStorage.getItem('cart'))
@@ -38,7 +38,7 @@ export const CartProvider = ({ children }) => {
             description,
             price,
             image,
-            quantity,
+            quantity
         }
 
 
@@ -47,20 +47,18 @@ export const CartProvider = ({ children }) => {
         )
 
         let newCartItems;
-        newCartItems = [...(cart?.cartItems || []), item]
+        if (isItemExist) {
+            newCartItems = cart?.cartItems?.map((i) =>
+                i.product_id === isItemExist.product_id ? item : i
+            )
 
-        // if (isItemExist) {
-        //     newCartItems = cart?.cartItems?.map((i) =>
-        //         i.product_id === isItemExist.product_id ? item : i
-        //     )
+        }
+        else {
+            newCartItems = [...(cart?.cartItems || []), item]
 
-        // }
-        // else {
-        //     newCartItems = [...(cart?.cartItems || []), item]
-
-        // }
+        }
         localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }))
-        setCarTToState()
+        setCartToState()
 
     }
     return <CartContext.Provider

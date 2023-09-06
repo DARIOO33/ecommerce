@@ -3,11 +3,11 @@ import Error from './Error.jsx'
 import Navigation from '@/app/components/navigation/Navigation'
 import Sellcard from '@/app/components/Sellcard/Sellcard'
 async function getCategories() {
-    const res = await fetch('https://dario4dev.netlify.app/api/categories', { next: { revalidate: 3600 } })
+    const res = await fetch('https://localhost:3000/api/categories', { next: { revalidate: 3600 } })
     return res.json()
 }
 async function getProducts() {
-    let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 10 } })
+    let res = await fetch("https://localhost:3000/api/products", { next: { revalidate: 10 } })
     return res.json()
 }
 export default async function page(params) {
