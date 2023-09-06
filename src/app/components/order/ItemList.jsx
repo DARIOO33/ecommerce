@@ -3,7 +3,7 @@ import Handler from "./Handler"
 import CartContext from "@/context/CartContext"
 import { useContext } from "react"
 export default function ItemList() {
-    const { addItemToCart, cart } = useContext(CartContext)
+    const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext)
     let orders = []
     try {
         if (cart.cartItems) {
@@ -34,7 +34,7 @@ export default function ItemList() {
                             <div className="p-details w-2/4 justify-between  px-5 flex mt-1.5 ">
                                 <h1 className="font-bold">{order.name}</h1>
                                 <h1 className="font-bold">Electronics</h1>
-                                <h1 className="text-red-500 cursor-pointer font-bold">Remove</h1>
+                                <h1 className="text-red-500 cursor-pointer font-bold" onClick={() => deleteItemFromCart(order.product_id)}>Remove</h1>
                             </div>
                         </div>
                     </div>

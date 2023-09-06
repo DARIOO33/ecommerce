@@ -18,7 +18,7 @@ export default function Handler({ value }) {
             </div>
             <div className="total w-2/12">
 
-                <Total total={value * counter} />
+                <Total total={(value * counter).toFixed(2)} />
             </div></>
     )
 };
