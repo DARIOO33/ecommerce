@@ -25,13 +25,13 @@ export default function SellCard({ img, id, price, productName, description, rat
     return (
         <div>
 
-            <div className="sellCard  w-4/5 h-48 mt-8 rounded-xl m-auto flex items-center ">
-                <div className="product-image h-36 bg-gray-100 w-4/12 ml-6 rounded-lg">
+            <div className="sellCard  w-4/5 laptop:h-48 mobile:mt-12 laptop:mt-8 rounded-xl m-auto laptop:flex items-center  ">
+                <div className="product-image laptop:h-36 bg-gray-100 mobile:w-7/12 laptop:w-4/12  laptop:ml-6 mobile:text-center mobile:m-auto mobile:mt-2 rounded-lg">
                     <Link href={"/product/" + href}>
                         <Image src={img} alt="" height={500} width={500} />
                     </Link>
                 </div>
-                <div className="details w-5/12 pl-6">
+                <div className="details laptop:w-5/12 mobile:w-10/12 mobile:text-center laptop:text-left  laptop:pl-6 mobile:pl-0 mobile:m-auto">
                     <Link href={"/product/" + href}>
                         <h1 className="text-xl font-bol cursor-pointer">{productName}</h1>
                     </Link>
@@ -40,13 +40,11 @@ export default function SellCard({ img, id, price, productName, description, rat
                         <Rating
                             name="simple-controlled"
                             value={value}
-                            onChange={(event, newValue) => {
-                                setValue(newValue);
-                            }}
+
                         />
                     </div>
                 </div>
-                <div className="buy w-2/12  m-auto text-center">
+                <div className="buy laptop:w-2/12 mobile:w-8/12  m-auto text-center mobile:pb-4">
                     <div className="text-center ">
 
                         <h1 className=' text-primary price-btn'>{price}$</h1>
