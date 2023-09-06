@@ -6,7 +6,7 @@ import { useContext } from "react"
 import { useState } from "react"
 
 export default function ItemList() {
-    const [counter, setCounter] = useState(1)
+    // const [counter, setCounter] = useState(1)
 
     const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext)
     let orders = []
@@ -48,7 +48,7 @@ export default function ItemList() {
                             </div>
                             <div className="p-details w-2/4 justify-between  px-5 flex mt-1.5 ">
                                 <h1 className="font-bold">{order.name}</h1>
-                                <h1 className="font-bold">Electronics</h1>
+                                <h1 className="font-bold">{order.category}</h1>
                                 <h1 className="text-red-500 cursor-pointer font-bold" onClick={() => deleteItemFromCart(order.product_id)}>Remove</h1>
                             </div>
                         </div>

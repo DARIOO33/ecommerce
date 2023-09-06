@@ -27,6 +27,7 @@ export const CartProvider = ({ children }) => {
         product_id,
         name,
         description,
+        category,
         price,
         image,
         quantity = 1
@@ -36,6 +37,7 @@ export const CartProvider = ({ children }) => {
             product_id,
             name,
             description,
+            category,
             price,
             image,
             quantity
