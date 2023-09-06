@@ -13,10 +13,6 @@ export default function Quantity({ counter, setCounter }) {
 
     }
     return (
-        <div className="flex w-1/2 h-4/5 m-auto justify-evenly items-center">
-            <p className="font-bold cursor-pointer text-xl " onClick={Deccreament}>-</p>
-            <p className=" outline-3 px-3 py-1 outline outline-slate-200 ">{counter}</p>
-            <p className="font-bold cursor-pointer text-xl" onClick={Increament}>+</p>
-        </div>
+        h1
     )
 };

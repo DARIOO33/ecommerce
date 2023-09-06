@@ -1,8 +1,15 @@
 import Image from "next/image"
 import Handler from "./Handler"
 import CartContext from "@/context/CartContext"
+import Quantity from "./Quantity"
+import Price from "./Price"
+import Total from "./Total"
 import { useContext } from "react"
+import { useState } from "react"
+
 export default function ItemList() {
+    const [counter, setCounter] = useState(1)
+
     const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext)
     let orders = []
     try {
@@ -17,7 +24,17 @@ export default function ItemList() {
     }
 
     console.log(orders);
-
+    const Increament = (cartItem) => {
+        const newQty = cartItem.quantity + 1
+        const item = { ...cartItem, quantity: newQty }
+        addItemToCart(item)
+    }
+    const Decreament = (cartItem) => {
+        if (cartItem.quantity == 1) return
+        const newQty = cartItem.quantity - 1
+        const item = { ...cartItem, quantity: newQty }
+        addItemToCart(item)
+    }
     return (
         <>
             {orders.map((order => (
@@ -38,7 +55,23 @@ export default function ItemList() {
                             </div>
                         </div>
                     </div>
-                    <Handler value={order.price} />
+                    <div className="quantity w-3/12 text-center">
+
+                        <div className="flex w-1/2 h-4/5 m-auto justify-evenly items-center">
+                            <p className="font-bold cursor-pointer text-xl " onClick={() => Decreament(order)} >-</p>
+                            <p className=" outline-3 px-3 py-1 outline outline-slate-200 ">{order.quantity}</p>
+                            <p className="font-bold cursor-pointer text-xl" onClick={() => Increament(order)}>+</p>
+                        </div>
+                    </div>
+                    <div className="price w-2/12">
+
+                        <Price value={order.price} />
+                    </div>
+                    <div className="total w-2/12">
+
+                        <Total total={(order.price * order.quantity).toFixed(2)} />
+                    </div>
+                    {/* <Handler value={order.price} /> */}
                 </div >
             )))
             }

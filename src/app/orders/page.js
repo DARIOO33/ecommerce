@@ -10,6 +10,7 @@ import Handler from "../components/order/Handler"
 import Nelements from "../components/order/Nelements"
 import ElementsN from "../components/order/ElementsN"
 import ItemList from "../components/order/ItemList"
+import TotalN from "../components/order/TotalN"
 export default function page() {
 
 
@@ -34,7 +35,7 @@ export default function page() {
                 <div className="price-details mt-6 flex w-full justify-between">
 
                     <ElementsN />
-                    <h1 className="text-lg text-center text-gray-500 font-bold">999 $</h1>
+                    <TotalN />
                 </div>
 
 

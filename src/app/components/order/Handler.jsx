@@ -3,6 +3,7 @@ import Quantity from "./Quantity"
 import Price from "./Price"
 import Total from "./Total"
 import { useState } from "react"
+import TotalN from "./TotalN"
 export default function Handler({ value }) {
     const [counter, setCounter] = useState(1)
 
@@ -19,6 +20,7 @@ export default function Handler({ value }) {
             <div className="total w-2/12">
 
                 <Total total={(value * counter).toFixed(2)} />
-            </div></>
+            </div>
+        </>
     )
 };
