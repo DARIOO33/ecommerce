@@ -22,6 +22,6 @@ export default function TotalN({ value }) {
 
     });
     return (
-        <h1 className="text-lg text-center text-gray-500 font-bold">{price} $</h1>
+        <h1 className="text-lg text-center text-gray-500 font-bold">{price.toFixed(2)} $</h1>
     )
 };

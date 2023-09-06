@@ -1,5 +1,4 @@
 "use client"
-import Quantity from "./Quantity"
 import Price from "./Price"
 import Total from "./Total"
 import { useState } from "react"
@@ -11,7 +10,6 @@ export default function Handler({ value }) {
         <>
             <div className="quantity w-3/12 text-center">
 
-                <Quantity counter={counter} setCounter={setCounter} />
             </div>
             <div className="price w-2/12">
 

@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Handler from "./Handler"
 import CartContext from "@/context/CartContext"
 import Quantity from "./Quantity"
 import Price from "./Price"
@@ -71,7 +70,6 @@ export default function ItemList() {
 
                         <Total total={(order.price * order.quantity).toFixed(2)} />
                     </div>
-                    {/* <Handler value={order.price} /> */}
                 </div >
             )))
             }
