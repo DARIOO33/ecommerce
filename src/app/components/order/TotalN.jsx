@@ -1,7 +1,6 @@
 "use client"
 import { useContext } from "react";
 import CartContext from "@/context/CartContext";
-import Handler from "./Handler"
 export default function TotalN({ value }) {
     const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext)
     let orders = []

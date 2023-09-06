@@ -1,6 +1,5 @@
 import Image from "next/image"
 import CartContext from "@/context/CartContext"
-import Quantity from "./Quantity"
 import Price from "./Price"
 import Total from "./Total"
 import { useContext } from "react"
