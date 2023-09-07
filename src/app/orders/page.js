@@ -69,8 +69,8 @@ export default function page() {
                         <TotalWithTax tax={5} />
                     </div>
 
-                    <div className="py-8 text-center">
-                        <button className="bg-purple-600 hover:bg-purple-900 active:opacity-80 py-2 px-8 w-64 text-lg text-white">Check Out</button>
+                    <div className="py-8 text-center pb-16">
+                        <button className="bg-purple-600 hover:bg-purple-900 active:opacity-80 py-2 px-8 w-64 text-lg text-white ">Check Out</button>
                     </div>
 
                 </div>
