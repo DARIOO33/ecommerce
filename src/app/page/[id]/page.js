@@ -19,7 +19,7 @@ export default async function page(params) {
 
 
                 {currentPosts.map((product => (
-                    <Sellcard img={product.images[0]} id={product.id} key={product.id} price={product.price} productName={product.name} description={product.description} ratings={Math.floor(Math.random() * 5)} />
+                    <Sellcard img={product.images[0]} id={product.id} key={product.id} price={product.price} category={product.category} productName={product.name} description={product.description} ratings={Math.floor(Math.random() * 5)} />
                 )))}
                 <Navigation />
 

@@ -22,7 +22,7 @@ export default async function Home() {
 
         {currentPosts.map((product => (
 
-          <Sellcard img={product.images[0]} id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
+          <Sellcard img={product.images[0]} id={product.id} key={product.id} category={product.category} productName={product.name} description={product.description} price={product.price} />
         )))}
 
         <Navigation />

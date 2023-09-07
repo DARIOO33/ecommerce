@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image'
 import './Sellcard.css'
 import CartContext from "@/context/CartContext"
-export default function SellCard({ img, id, price, productName, description, ratings }) {
+export default function SellCard({ img, id, price, category, productName, description, ratings }) {
 
     const [value, setValue] = useState(Math.floor(Math.random() * 5));
     const href = id.toString()
@@ -17,7 +17,7 @@ export default function SellCard({ img, id, price, productName, description, rat
             name: productName,
             description: description,
             price: price,
-
+            category: category,
             image: { img }
         })
     }
