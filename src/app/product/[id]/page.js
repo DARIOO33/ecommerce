@@ -26,7 +26,7 @@ export default async function page(params) {
             <div className='return ml-4 cursor-pointer absolute w-5/6 m-auto'>
                 <StepBack />
             </div>
-            <div className=' product-container m-auto w-5/6  rounded-lg   pb-8 laptop:flex mobile:block items-center laptop:mt-12 mobile:mt-28'>
+            <div className=' product-container m-auto w-5/6  rounded-lg   pb-8 laptop:flex mobile:block items-center laptop:mt-12 mobile:mt-28 '>
                 <div className='product  laptop:flex mobile:block  laptop:items-center'>
                     <div className='part1 laptop:mt-6  mobile:mt-10'>
                         <div className='product-big-image  rounded-lg laptop:flex laptop:justify-center mobile:flex mobile:m-auto'>
