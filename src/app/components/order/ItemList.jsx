@@ -33,7 +33,9 @@ export default function ItemList() {
         const item = { ...cartItem, quantity: newQty }
         addItemToCart(item)
     }
+
     return (
+
         <>
             {orders.map((order => (
                 <div className="itemlist mt-6 flex" key={order.product_id}>

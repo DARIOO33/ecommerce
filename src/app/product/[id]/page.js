@@ -20,16 +20,16 @@ export default async function page(params) {
     console.log(products[(params.params.id) - 1]);
 
     const images = currentProduct.images
-    console.log(images);
+
     return (
         <>
             <div className='return ml-4 cursor-pointer absolute w-5/6 m-auto'>
                 <StepBack />
             </div>
-            <div className=' product-container m-auto w-5/6  rounded-lg   pb-8 flex items-center mt-12'>
-                <div className='product  flex  items-center'>
-                    <div className='part1 mt-6 '>
-                        <div className='product-big-image rounded-lg flex justify-center'>
+            <div className=' product-container m-auto w-5/6  rounded-lg   pb-8 laptop:flex mobile:block items-center laptop:mt-12 mobile:mt-28'>
+                <div className='product  laptop:flex mobile:block  laptop:items-center'>
+                    <div className='part1 laptop:mt-6  mobile:mt-10'>
+                        <div className='product-big-image  rounded-lg laptop:flex laptop:justify-center mobile:flex mobile:m-auto'>
 
                             <Image
                                 alt='product image'
@@ -48,7 +48,7 @@ export default async function page(params) {
                     </div>
                     <div className='part2 pl-6'>
                         <h1 className='title text-3xl font-extrabold '>{currentProduct.name}</h1>
-                        <div className='reviews flex h-8  items-center'>
+                        <div className='reviews flex laptop:h-8  items-center laptop:justify-start mobile:justify-center mobile:py-4'>
                             <Rating
                                 name="simple-controlled"
                                 value={3}
@@ -56,16 +56,16 @@ export default async function page(params) {
                             />
                             <p className='ml-4 font-light'>3 reviews</p>
                         </div>
-                        <div className='price_and_shipping flex items-center'>
+                        <div className='price_and_shipping flex items-center laptop:justify-start mobile:justify-center'>
                             <h1 className='text-3xl font-bold'>{currentProduct.price}$</h1>
                             <h1 className='text-l font-light ml-2'>+Free Shipping</h1>
 
                         </div>
                         <div className='details'>
-                            <p className='description text-sm font-light mt-2'>
+                            <p className='description text-sm font-light mt-3'>
                                 {currentProduct.description}
                             </p>
-                            <div className='button mt-3'>
+                            <div className='button laptop:mt-3 mobile:py-4 mobile:mt-2 '>
                                 <button className='px-4 py-2 primarybg text-white rounded-2xl text-md'>Buy Now</button>
                             </div>
                             <Stock />
