@@ -38,24 +38,24 @@ export default function ItemList() {
 
         <>
             {orders.map((order => (
-                <div className="itemlist mt-6 flex" key={order.product_id}>
-                    <div className="product-details w-5/12">
-                        <div className="flex mt-6">
-                            <div className="p-image w-2/4">
+                <div className="itemlist mt-6 laptop:flex mobile:block" key={order.product_id}>
+                    <div className="product-details laptop:w-5/12 mobile:w-full ">
+                        <div className="laptop:flex mobile:block mt-6 ">
+                            <div className="p-image laptop:w-2/4 mobile:w-full mobile:m-auto mobile:text-center laptop:m-0">
                                 <Image
                                     alt="Msi Monitor"
-                                    height={500}
-                                    width={500}
+                                    height={700}
+                                    width={700}
                                     src={order.image.img} />
                             </div>
-                            <div className="p-details w-2/4 justify-evenly  px-5 flex mt-1.5 ">
+                            <div className="p-details laptop:w-2/4 mobile:w-full justify-evenly  px-5 flex mt-1.5 mobile:text-center laptop:text-left ">
                                 <h1 className="font-semibold text-sm">{order.name}</h1>
                                 <h1 className="text-gray-600 font-normal text-sm">{order.category}</h1>
                                 <h1 className="text-red-500 cursor-pointer font-normal text-sm" onClick={() => deleteItemFromCart(order.product_id)}>Remove</h1>
                             </div>
                         </div>
                     </div>
-                    <div className="quantity w-3/12 text-center">
+                    <div className="quantity laptop:w-3/12 mobile:w-full text-center">
 
                         <div className="flex w-1/2 h-4/5 m-auto justify-evenly items-center">
                             <p className="font-bold cursor-pointer text-xl " onClick={() => Decreament(order)} >-</p>
@@ -63,11 +63,11 @@ export default function ItemList() {
                             <p className="font-bold cursor-pointer text-xl" onClick={() => Increament(order)}>+</p>
                         </div>
                     </div>
-                    <div className="price w-2/12">
+                    <div className="price laptop:w-2/12 mobile:w-full mobile:py-4 laptop:py-0 laptop:text-left ">
 
                         <Price value={order.price} />
                     </div>
-                    <div className="total w-2/12">
+                    <div className="total laptop:w-2/12 mobile:w-full mobile:py-4">
 
                         <Total total={(order.price * order.quantity).toFixed(2)} />
                     </div>
