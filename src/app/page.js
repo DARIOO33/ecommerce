@@ -10,9 +10,12 @@ async function getProducts() {
   let res = await fetch("https://dario4dev.netlify.app/api/products", { next: { revalidate: 30 } })
   return res.json()
 }
-export default async function Home() {
+export default async function Home(params) {
+  console.log(params.searchParams.page);
   let products = await getProducts()
-  const currentPosts = products.slice(0, 3)
+  const PostsPerPage = 3
+  const currentPage = params.searchParams.page ?? 1
+  const currentPosts = products.slice((currentPage - 1) * PostsPerPage, currentPage * PostsPerPage)
 
   return (
     <div>
