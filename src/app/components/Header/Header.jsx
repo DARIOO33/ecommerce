@@ -3,9 +3,13 @@ import './Header.css'
 import Bag from './Bag'
 import Image from "next/image"
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BsBag } from 'react-icons/bs'
 export default function Header() {
+    const [searchinput, setSearchinput] = useState("")
+    const router = useRouter()
     return (
         <div >
             <header className="mobile:block  border-b mobile:fixed laptop:fixed w-full laptop:items-center top-0 laptop:flex  py-4     bg-white">
@@ -20,9 +24,10 @@ export default function Header() {
                 <div className="item item2 flex justify-center m-auto text-center mobile:mt-6 laptop:mt-0  ">
                     <div className="search flex justify-center">
                         <p>
-                            <input type="text" placeholder='Search Your Item' className='h-8 py-5 pl-4 laptop:w-72 rounded-xl bg-gray-100' />
+                            <input onChange={(e) => setSearchinput(e.target.value)} type="text" placeholder='Search Your Item' className='h-8 py-5 pl-4 laptop:w-72 rounded-xl bg-gray-100' />
+
                         </p>
-                        <div className='icon flex justify-center items-center rounded-lg h-10 w-10'><AiOutlineSearch /></div>
+                        <div className='icon flex justify-center items-center rounded-lg h-10 w-10' onClick={() => router.push('/search?keyword=' + searchinput)} ><AiOutlineSearch /></div>
                         <Bag />
                     </div>
                 </div>
