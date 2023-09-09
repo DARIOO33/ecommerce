@@ -11,7 +11,7 @@ export default function Navigation() {
     const nextPage = Number(currentPage) + 1
     const prevPage = Number(currentPage) - 1
     const hasPrevPage = prevPage > 0
-    const hasNextPage = nextPage < 3
+    const hasNextPage = nextPage < 5
 
 
 
