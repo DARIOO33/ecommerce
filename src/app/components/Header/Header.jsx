@@ -29,7 +29,7 @@ export default function Header() {
                 <div className="item item2 flex justify-center m-auto text-center mobile:mt-6 laptop:mt-0  ">
                     <div className="search flex justify-center">
                         <p>
-                            <input onKeyDown={(e) => handleSearchInputKeyPress(e)} onChange={(e) => setSearchinput(e.target.value)} type="text" placeholder='Search Your Item' className='h-8 py-5 pl-4 laptop:w-72 rounded-xl bg-gray-100' />
+                            <input onKeyDown={(e) => handleSearchInputKeyPress(e)} onChange={(e) => setSearchinput(e.target.value)} type="text" placeholder='Search Your Item' className='h-8 py-5 pl-4 laptop:w-72 mobile:w-40 rounded-xl bg-gray-100' />
 
                         </p>
                         <button className='icon flex justify-center items-center rounded-lg h-10 w-10' onClick={() => router.push('/search?keyword=' + searchinput)} disabled={searchinput == ''} ><AiOutlineSearch /></button>
