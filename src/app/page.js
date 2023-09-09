@@ -11,7 +11,6 @@ async function getProducts() {
   return res.json()
 }
 export default async function Home(params) {
-  console.log(params.searchParams.page);
   let products = await getProducts()
   const PostsPerPage = 3
   const currentPage = params.searchParams.page ?? 1

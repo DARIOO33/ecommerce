@@ -1,8 +1,4 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import Navigation from './../components/navigation/Navigation.jsx'
 import Dash from './../components/dash/Dash.jsx'
-import img from '../../assets/img.png'
 
 import Sellcard from './../components/Sellcard/Sellcard.jsx'
 import "../globals.css"

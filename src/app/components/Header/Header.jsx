@@ -27,7 +27,7 @@ export default function Header() {
                             <input onChange={(e) => setSearchinput(e.target.value)} type="text" placeholder='Search Your Item' className='h-8 py-5 pl-4 laptop:w-72 rounded-xl bg-gray-100' />
 
                         </p>
-                        <div className='icon flex justify-center items-center rounded-lg h-10 w-10' onClick={() => router.push('/search?keyword=' + searchinput)} ><AiOutlineSearch /></div>
+                        <button className='icon flex justify-center items-center rounded-lg h-10 w-10' onClick={() => router.push('/search?keyword=' + searchinput)} disabled={searchinput == ''} ><AiOutlineSearch /></button>
                         <Bag />
                     </div>
                 </div>
