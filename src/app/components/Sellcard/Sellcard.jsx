@@ -33,7 +33,10 @@ export default function SellCard({ img, id, price, category, productName, descri
                 </div>
                 <div className="details laptop:w-5/12 mobile:w-10/12 mobile:text-center laptop:text-left  laptop:pl-6 mobile:pl-0 mobile:m-auto">
                     <Link href={"/product/" + href}>
-                        <h1 className="text-xl font-bol cursor-pointer">{productName}</h1>
+
+                        <Suspense fallback={<p>Loading ...</p>}>
+                            <h1 className="text-xl font-bol cursor-pointer">{productName}</h1>
+                        </Suspense>
                     </Link>
                     <p className="font-medium p-des">{(description.substr(0, 100))}...</p>
                     <div className="stars pt-2">

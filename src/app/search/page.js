@@ -1,5 +1,5 @@
 import Dash from './../components/dash/Dash.jsx'
-
+import { Suspense } from 'react'
 import Sellcard from './../components/Sellcard/Sellcard.jsx'
 import "../globals.css"
 async function getProducts() {
@@ -16,11 +16,20 @@ export default async function Home(params) {
             <Dash />
             <div className=' z-10 content   pb-8'>
 
+                <Suspense fallback={<p>Loading ...</p>}>
 
-                {FiltredProducts.map((product => (
+                    {FiltredProducts.map((product => (
 
-                    <Sellcard img={product.images[0]} id={product.id} key={product.id} category={product.category} productName={product.name} description={product.description} price={product.price} />
-                )))}
+                        <Sellcard
+                            img={product.images[0]}
+                            id={product.id}
+                            key={product.id}
+                            category={product.category}
+                            productName={product.name}
+                            description={product.description}
+                            price={product.price} />
+                    )))}
+                </Suspense>
 
                 {/* <Navigation /> */}
             </div>
