@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import Rating from '@mui/material/Rating';
 import StepBack from '../smallcomponents/StepBack.jsx'
+import BuyButton from '../smallcomponents/BuyButton.jsx'
 import msi from '../../../assets/msi.png'
 import msi2 from '../../../assets/msi2.png'
 import ProductImages from '../smallcomponents/ProductImages'
@@ -17,7 +18,8 @@ async function getProducts() {
 export default async function page(params) {
     let products = await getProducts()
     // console.log(params.params.id);
-    const currentProduct = products[(params.params.id) - 1]
+    const index = (params.params.id) - 1
+    const currentProduct = products[index]
 
     const images = currentProduct.images
 
@@ -48,9 +50,14 @@ export default async function page(params) {
                             <p className='description text-sm font-light mt-3'>
                                 {currentProduct.description}
                             </p>
-                            <div className='button laptop:mt-3 mobile:py-4 mobile:mt-2 '>
-                                <button className='px-4 py-2 primarybg text-white rounded-2xl text-md'>Buy Now</button>
-                            </div>
+                            <BuyButton
+                                img={currentProduct.images[0]}
+                                id={currentProduct.id}
+                                price={currentProduct.price}
+                                category={currentProduct.category}
+                                productName={currentProduct.name}
+                                description={currentProduct.description}
+                            />
                             <Stock />
                             <Category category={currentProduct.category} />
 
