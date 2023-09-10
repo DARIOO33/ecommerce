@@ -1,0 +1,17 @@
+.loading {
+    /* width: 0%; */
+    /* display: none; */
+    animation: loading 2.5s;
+}
+
+@keyframes loading {
+    0% {
+        display: block;
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+        display: none;
+    }
+}
