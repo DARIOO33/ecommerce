@@ -12,11 +12,27 @@
     height: 100%;
 }
 
+.product-image {
+    display: flex;
+
+    justify-content: center;
+    height: 18vh;
+    margin-top: 2vh;
+
+}
+
 .btn-buy {
 
     font-size: .9rem;
 }
 
 .sellCard {
+    height: 22.5vh;
     border: .05rem solid black;
+}
+
+@media screen and (max-width:900px) {
+    .sellCard {
+        height: auto;
+    }
 }

@@ -17,8 +17,6 @@ export default function ProductImages({ currentProduct }) {
                 <img
                     ref={imgRef}
                     alt='product image'
-                    width={1000}
-                    height={1000}
                     className='rounded-lg'
                     src={currentProduct.images[0]} />
             </div>

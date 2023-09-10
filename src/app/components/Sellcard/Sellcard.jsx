@@ -25,8 +25,8 @@ export default function SellCard({ img, id, price, category, productName, descri
     return (
         <div>
 
-            <div className="sellCard  w-4/5 laptop:h-48 mobile:mt-12 laptop:mt-8 rounded-xl m-auto laptop:flex items-center  ">
-                <div className="product-image laptop:h-36 bg-gray-100 mobile:w-7/12 laptop:w-4/12  laptop:ml-6 mobile:text-center mobile:m-auto mobile:mt-2 rounded-lg">
+            <div className="sellCard   w-4/5  mobile:mt-12  laptop:mt-8 rounded-xl m-auto laptop:flex items-center  ">
+                <div className="product-image   bg-gray-100 mobile:w-7/12 laptop:w-4/12  laptop:ml-6 mobile:text-center mobile:m-auto mobile:mt-2 rounded-lg">
                     <Link href={"/product/" + href}>
                         <Image src={img} alt="" height={500} width={500} />
                     </Link>
