@@ -20,24 +20,42 @@ export default async function page(params) {
         filtredPrice = products.filter((product => (Number(product.price) > min && Number(product.price) < max) && product.category == category))
 
     }
-    return (
-        <div>
-            <Dash />
+    if (Number(max) + Number(min) == 0) {
+        return (
+            <div>
 
+                <Dash />
+                <div className='content  mt-8 pb-8 '>
 
-            <div className='content   pb-8'>
-
-
-                {filtredPrice.map((product => (
-
-
-                    <Sellcard img={product.images[0]} id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
-
-                )))}
+                    <p className="text-3xl text-center font-bold pt-12 ">Enter a Min and Max Price Please !! </p>
+                </div>
 
             </div>
 
-        </div>
+        )
+    }
+    else {
 
-    )
+
+        return (
+            <div>
+                <Dash />
+
+
+                <div className='content   pb-8'>
+
+
+                    {filtredPrice.map((product => (
+
+
+                        <Sellcard img={product.images[0]} id={product.id} key={product.id} productName={product.name} description={product.description} price={product.price} />
+
+                    )))}
+
+                </div>
+
+            </div>
+
+        )
+    }
 };
