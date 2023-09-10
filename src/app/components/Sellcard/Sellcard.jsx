@@ -9,12 +9,13 @@ import ItemAdded from '../itemAdded/itemAdded';
 import CartContext from "@/context/CartContext"
 export default function SellCard({ img, id, price, category, productName, description, ratings }) {
     const [showComponent, setShowComponent] = useState(false);
-
     useEffect(() => {
         setTimeout(() => {
             setShowComponent(false);
         }, 3000);
     }, [showComponent]);
+
+
     const [value, setValue] = useState(Math.floor(Math.random() * 5));
     const href = id.toString()
     const { addItemToCart } = useContext(CartContext)
