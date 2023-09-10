@@ -2,7 +2,8 @@
 import { useContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import CartContext from "@/context/CartContext"
-import Loading from '../[id]/Loading';
+import Loading from '../../components/Loading/Loading';
+import Header from '@/app/components/Header/Header';
 
 export default function BuyButton({ img, id, price, category, productName, description }) {
     const [showLoading, setShowLoading] = useState(false);
